@@ -47,12 +47,12 @@ int main(int argument_count, char* arguments[])
 
 			//Aqui hace los hijos y deberia volver a ejecutar este mismo programa
 			for (int i = 0; i < num_lineas; i++) {
-				fork();
 				char* c_linea;
 				char linea[10];
 				snprintf(linea,10,"%d",lineas[i]);
 				strcpy(c_linea,linea);
 				char *args[]={arguments[0],inputname,c_linea};
+				fork();
 				execvp(args[0],args);
 			}
 

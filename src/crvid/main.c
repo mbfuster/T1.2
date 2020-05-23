@@ -55,6 +55,8 @@ int main(int argument_count, char* arguments[])
 				fork();
 				execvp(args[0],args);
 			}
+			fclose(file);
+
 
 			float diff_time = (float)(clock()-start)/CLOCKS_PER_SEC;
 			while(diff_time < tiempo && wait(&status)>0){
